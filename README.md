@@ -7,7 +7,7 @@
 [![Latest Stable Release](https://img.shields.io/github/v/release/pkgforge-dev/TEMPLATE-AppImage)](https://github.com/pkgforge-dev/OpenTTD-AppImage/releases/latest)
 
 <p align="center">
-  <img src="https://github.com/OpenTTD/OpenTTD/raw/refs/heads/master/media/openttd.svg" width="128" />
+  <img src="https://github.com/OpenTTD/OpenTTD/blob/master/media/openttd.128.png" width="128" />
 </p>
 
 
