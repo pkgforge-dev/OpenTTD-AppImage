@@ -8,7 +8,7 @@ export ARCH VERSION
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.bg.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
-export ICON=https://github.com/OpenTTD/OpenTTD/raw/refs/heads/master/media/openttd.svg
+export ICON=/usr/share/icons/hicolor/256x256/apps/openttd.png
 export DESKTOP=/usr/share/applications/openttd.desktop
 export STARTUPWMCLASS=
 export DEPLOY_OPENGL=1
