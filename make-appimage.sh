@@ -3,24 +3,25 @@
 set -eu
 
 ARCH=$(uname -m)
-VERSION=$(pacman -Q openttd | awk '{print $2; exit}') # example command to get version of application here
+VERSION=$(pacman -Q openttd | awk '{print $2; exit}')
 export ARCH VERSION
 export OUTPATH=./dist
-export ADD_HOOKS="self-updater.bg.hook"
+export ADD_HOOKS="self-updater.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
 export ICON=/usr/share/icons/hicolor/256x256/apps/openttd.png
 export DESKTOP=/usr/share/applications/openttd.desktop
 export STARTUPWMCLASS=openttd
 export DEPLOY_OPENGL=1
+export DEPLOY_PIPEWIRE=1 # needed for libfluidsynth
 
 # Deploy dependencies
-quick-sharun /usr/bin/openttd /usr/share/openttd
-
-# Additional changes can be done in between here
+mkdir -p /usr/share/soundfonts
+wget https://raw.githubusercontent.com/Jacalz/fluid-soundfont/master/SF3/FluidR3.sf3 -O /usr/share/soundfonts/FluidR3_GM.sf2
+quick-sharun /usr/bin/openttd /usr/share/openttd /usr/share/soundfonts
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
 
-# Test the app for 12 seconds, if the test fails due to the app
-# having issues running in the CI use --simple-test instead
-quick-sharun --test ./dist/*.AppImage
+# Test the app for 12 seconds, if the app normally quits before that time
+# then skip this or check if some flag can be passed that makes it stay open
+quick-sharun --simple-test ./dist/*.AppImage
