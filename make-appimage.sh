@@ -12,6 +12,7 @@ export ICON=/usr/share/icons/hicolor/256x256/apps/openttd.png
 export DESKTOP=/usr/share/applications/openttd.desktop
 export STARTUPWMCLASS=openttd
 export DEPLOY_OPENGL=1
+export DEPLOY_PIPEWIRE=1 # needed for libfluidsynth
 
 # Deploy dependencies
 quick-sharun /usr/bin/openttd /usr/share/openttd
