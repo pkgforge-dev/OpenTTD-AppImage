@@ -10,7 +10,9 @@ pacman -Syu --noconfirm \
     libdecor        \
     openttd         \
     openttd-opengfx \
-    openttd-opensfx
+    openttd-opensfx \
+    pipewire-audio  \
+    pipewire-jack
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
