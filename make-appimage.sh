@@ -6,7 +6,7 @@ ARCH=$(uname -m)
 VERSION=$(pacman -Q openttd | awk '{print $2; exit}')
 export ARCH VERSION
 export OUTPATH=./dist
-export ADD_HOOKS="self-updater.hook"
+export ADD_HOOKS="self-updater.hook:sdl-soundfonts.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
 export ICON=/usr/share/icons/hicolor/256x256/apps/openttd.png
 export DESKTOP=/usr/share/applications/openttd.desktop
