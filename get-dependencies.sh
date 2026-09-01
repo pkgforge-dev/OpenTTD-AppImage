@@ -6,12 +6,11 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm   \
-    freepats-general-midi \
-    openttd               \
-    openttd-opengfx       \
-    openttd-opensfx       \
-    pipewire-audio        \
+pacman -Syu --noconfirm \
+    openttd         \
+    openttd-opengfx \
+    openttd-opensfx \
+    pipewire-audio  \
     pipewire-jack
 
 echo "Installing debloated packages..."
