@@ -6,7 +6,8 @@ ARCH=$(uname -m)
 VERSION=$(pacman -Q openttd | awk '{print $2; exit}')
 export ARCH VERSION
 export OUTPATH=./dist
-export ADD_HOOKS="self-updater.hook:sdl-soundfonts.hook"
+#export ADD_HOOKS="self-updater.hook:sdl-soundfonts.hook"
+export ADD_HOOKS="self-updater.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
 export ICON=/usr/share/icons/hicolor/256x256/apps/openttd.png
 export DESKTOP=/usr/share/applications/openttd.desktop
@@ -16,7 +17,7 @@ export DEPLOY_PIPEWIRE=1 # needed for libfluidsynth
 
 # Deploy dependencies
 quick-sharun /usr/bin/openttd /usr/share/openttd
-
+echo 'SDL_SOUNDFONTS=${SHARUN_DIR}/share/soundfonts/FluidR3_GM.sf2' >> ./AppDir/.env
 mkdir -p ./AppDir/share/soundfonts
 wget https://raw.githubusercontent.com/Jacalz/fluid-soundfont/master/SF3/FluidR3.sf3 -O ./AppDir/share/soundfonts/FluidR3.sf3
 
