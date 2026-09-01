@@ -17,7 +17,7 @@ export DEPLOY_PIPEWIRE=1 # needed for libfluidsynth
 
 # Deploy dependencies
 quick-sharun /usr/bin/openttd /usr/share/openttd
-echo 'SDL_SOUNDFONTS=${SHARUN_DIR}/share/soundfonts/FluidR3_GM.sf2' >> ./AppDir/.env
+echo 'SDL_SOUNDFONTS=${SHARUN_DIR}/share/soundfonts/FluidR3.sf3' >> ./AppDir/.env
 mkdir -p ./AppDir/share/soundfonts
 wget https://raw.githubusercontent.com/Jacalz/fluid-soundfont/master/SF3/FluidR3.sf3 -O ./AppDir/share/soundfonts/FluidR3.sf3
 
