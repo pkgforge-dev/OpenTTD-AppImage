@@ -28,4 +28,5 @@ echo "---------------------------------------------------------------"
 VERSION=0.4.2
 https://cdn.openttd.org/openmsx-releases/${VERSION}/openmsx-${VERSION}-all.zip
 
-bsdtar -xvf openmsx-${VERSION}-all.zip
+mkdir -p ./AppDir/
+bsdtar -xOf openmsx-${VERSION}-all.zip openmsx-0.4.2.tar | bsdtar -xvf - --include='openmsx-0.4.2/*.mid' -C ./AppDir/ --strip-components=1
