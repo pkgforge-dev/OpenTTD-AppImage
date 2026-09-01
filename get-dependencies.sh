@@ -23,10 +23,10 @@ get-debloated-pkgs --add-common --prefer-nano libdecor-mini
 # If the application needs to be manually built that has to be done down here
 
 # if you also have to make nightly releases check for DEVEL_RELEASE = 1
-echo "Getting OpenTTD-openmsx..."
+echo "Getting OpenTTD-OpenMSX..."
 echo "---------------------------------------------------------------"
 VERSION=0.4.2
 https://cdn.openttd.org/openmsx-releases/${VERSION}/openmsx-${VERSION}-all.zip
 
-mkdir -p ./AppDir/
-bsdtar -xOf openmsx-${VERSION}-all.zip openmsx-0.4.2.tar | bsdtar -xvf - --include='openmsx-0.4.2/*.mid' -C ./AppDir/ --strip-components=1
+mkdir -p ./AppDir/share/openttd/gm
+bsdtar -xOf openmsx-${VERSION}-all.zip openmsx-0.4.2.tar | bsdtar -xvf - --include='openmsx-0.4.2/*.mid' -C ./AppDir/share/openttd/gm --strip-components=1
