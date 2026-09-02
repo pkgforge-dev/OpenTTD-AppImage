@@ -15,6 +15,7 @@ export DEPLOY_OPENGL=1
 export DEPLOY_PIPEWIRE=1 # needed for libfluidsynth
 
 # Deploy dependencies
+mkdir -p /usr/share/soundfonts
 wget https://raw.githubusercontent.com/Jacalz/fluid-soundfont/master/SF3/FluidR3.sf3 -O /usr/share/soundfonts/FluidR3.sf3
 quick-sharun /usr/bin/openttd /usr/share/openttd /usr/share/soundfonts
 
