@@ -17,6 +17,7 @@ export DEPLOY_PIPEWIRE=1 # needed for libfluidsynth
 # Deploy dependencies
 mkdir -p /usr/share/soundfonts
 wget https://raw.githubusercontent.com/Jacalz/fluid-soundfont/master/SF3/FluidR3.sf3 -O /usr/share/soundfonts/FluidR3.sf3
+ln -sr /usr/share/soundfonts/FluidR3.sf3 /usr/share/soundfonts/FluidR3_GM.sf2
 quick-sharun /usr/bin/openttd /usr/share/openttd /usr/share/soundfonts
 
 # Turn AppDir into AppImage
